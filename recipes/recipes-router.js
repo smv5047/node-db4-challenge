@@ -6,10 +6,12 @@ const router = express.Router()
 
 router.get('/', (req, res, next) => {
     Recipes.find()
-    .then(schemes =>{
-
+    .then(recipes =>{
+        res.json(recipes)
     })
-    .catch()
+    .catch(err => {
+        res.status(500).json({message: 'Failed to get recipes'});
+    })
 })
 
 module.exports = router

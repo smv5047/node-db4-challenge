@@ -1,7 +1,7 @@
 const db = require("../data/db-config")
 
 function find() {
-    return db("recipes")
+    return db("ingredients")
     
 }
 
